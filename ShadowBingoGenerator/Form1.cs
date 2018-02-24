@@ -165,9 +165,14 @@ namespace ShadowBingoGenerator
             }
 
             textBox1.Text = "[";
-            foreach (var item in generatedBoard)
+            for(int i = 0; i < generatedBoard.Count; i++)
             {
-                textBox1.Text += "{\"name\": " + item + "}," + "\r\n";
+                textBox1.Text += "{\"name\": \"" + generatedBoard[i] + "\"}";
+                if (i != generatedBoard.Count - 1)
+                {
+                    textBox1.Text += ",";
+                }
+                textBox1.Text += "\r\n";
             }
             textBox1.Text += "]";
         }
